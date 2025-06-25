@@ -1,29 +1,56 @@
-📦 URL Shortener with Click Analytics
+# 📦 URL Shortener with Click Analytics
+
 This is a full-stack web application built with React, Node.js (Express), and MySQL that allows users to shorten URLs and track the number of clicks.
 
-🚀 Tech Stack
-Frontend: React + TailwindCSS
-Backend: Node.js + Express
-Database: MySQL
-🛠️ Getting Started
-✅ Prerequisites
-Node.js installed
-MySQL installed and running
-npm or yarn
-⚙️ Backend Setup
+---
+
+## 🚀 Tech Stack
+
+* **Frontend**: React + TailwindCSS
+* **Backend**: Node.js + Express
+* **Database**: MySQL
+
+---
+
+## 🛠️ Getting Started
+
+### ✅ Prerequisites
+
+* Node.js installed
+* MySQL installed and running
+* [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+---
+
+## ⚙️ Backend Setup
+
+```bash
 cd backend
 npm init -y
 npm install express cors dotenv mysql2 nanoid
-✏️ Create .env file in /backend
+```
+
+### ✏️ Create `.env` file in `/backend`
+
+```
 DB_HOST=localhost
 DB_USER=root
 DB_PASS=your_mysql_password
 DB_NAME=url_shortener
 BASE_URL=http://localhost:5001
-🧱 MySQL Setup
-Open terminal:
+```
+
+### 🧱 MySQL Setup
+
+1. Open terminal:
+
+```bash
 mysql -u root -p
-Create database and table:
+```
+
+2. Create database and table:
+
+```sql
 CREATE DATABASE url_shortener;
 USE url_shortener;
 
@@ -34,19 +61,34 @@ CREATE TABLE urls (
   click_count INT DEFAULT 0,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-▶️ Run Backend
-node src/server.js
-Make sure it's listening on http://localhost:5001
+```
 
-🎨 Frontend Setup
+### ▶️ Run Backend
+
+```bash
+node src/server.js
+```
+
+Make sure it's listening on **[http://localhost:5001](http://localhost:5001)**
+
+---
+
+## 🎨 Frontend Setup
+
+```bash
 cd frontend
 npm create vite@latest
 # Choose React + JavaScript template
 cd your-project-name
 npm install
 npm install tailwindcss @tailwindcss/vite
-🧩 Tailwind Configuration
-In vite.config.ts:
+```
+
+### 🧩 Tailwind Configuration
+
+#### In `vite.config.ts`:
+
+```js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
@@ -55,22 +97,42 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 })
-In src/index.css:
+
+```
+
+#### In `src/index.css`:
+
+```css
 @import "tailwindcss";
-🔌 Replace App.jsx with provided code
-Replace the contents of src/App.jsx with the version in this repo.
+```
 
-▶️ Run Frontend
+### 🔌 Replace `App.jsx` with provided code
+
+Replace the contents of `src/App.jsx` with the version in this repo.
+
+### ▶️ Run Frontend
+
+```bash
 npm run dev
-Visit: http://localhost:5173 (or whatever port Vite shows)
+```
 
-✅ Features
-Shorten long URLs with a unique ID
-Store and retrieve mappings in MySQL
-Auto-increment click counter on redirection
-Edit or delete existing mappings
-Stylish, responsive dark UI with TailwindCSS
-📂 Project Structure
+Visit: **[http://localhost:5173](http://localhost:5173)** (or whatever port Vite shows)
+
+---
+
+## ✅ Features
+
+* Shorten long URLs with a unique ID
+* Store and retrieve mappings in MySQL
+* Auto-increment click counter on redirection
+* Edit or delete existing mappings
+* Stylish, responsive dark UI with TailwindCSS
+
+---
+
+## 📂 Project Structure
+
+```
 - backend/
   - src/server.js
   - .env
@@ -78,8 +140,16 @@ Stylish, responsive dark UI with TailwindCSS
   - src/App.jsx
   - src/index.css
   - vite.config.js
-🧪 Test Sample URLs
+```
+
+---
+
+## 🧪 Test Sample URLs
+
+```txt
 https://www.google.com
 https://www.youtube.com/watch?v=dQw4w9WgXcQ
 https://en.wikipedia.org/wiki/OpenAI
+```
 
+---
